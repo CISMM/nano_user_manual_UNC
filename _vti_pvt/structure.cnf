@@ -1,0 +1,20 @@
+3.0.0.507
+1018
+1000,index.htm,0,UNC NanoManipulator User Manual,0,976563568,1
+vti_globalpage:BW|true
+1003,file_menu/file_menu.htm,0,File Menu,1000,976559183,0
+1004,setup_menu/setup_menu.htm,0,Setup Menu,1000,976562297,0
+1005,tip_control_menu/tip_control_menu.htm,0,Tip Control Menu,1000,976562809,0
+1002,analysis_menu/analysis_menu.htm,0,Analysis Menu,1000,976559183,0
+1006,tools_menu/tools_menu.htm,0,Tools Menu,1000,976559183,0
+1007,file_menu/export_scene.htm,0,Export Scene,1003,976562286,0
+1008,setup_menu/texture_blend.htm,0,Texture Blend,1004,976562392,0
+1009,setup_menu/haptic.htm,0,Haptic,1004,976562535,0
+1010,setup_menu/external_filters.htm,0,External Filters,1004,976562532,0
+1011,analysis_menu/data_registration.htm,0,Data Registration,1002,976562784,0
+1012,analysis_menu/tip_convolution.htm,0,Tip Convolution,1002,976562787,0
+1013,tools_menu/collaboration.htm,0,Collaboration,1006,976562904,0
+1014,tools_menu/ohmmeter.htm,0,Ohmmeter,1006,976562906,0
+1015,tools_menu/vi_curve.htm,0,VI Curve,1006,976562990,0
+1016,tools_menu/latency_adaptation.htm,0,Latency Adaptation,1006,976562988,0
+1017,tools_menu/sem.htm,0,SEM,1006,976563378,0
