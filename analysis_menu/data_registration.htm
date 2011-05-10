@@ -1,22 +1,121 @@
+
 <html>
 
+
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
 <title>Data Registration</title>
+
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
 <meta name="ProgId" content="FrontPage.Editor.Document">
+
 <meta name="Microsoft Theme" content="user-man 010, default">
+
 <meta name="Microsoft Border" content="t, default">
+
 </head>
+
 
 <body bgcolor="#FFFFCC" text="#000000" link="#006600" vlink="#993333" alink="#CC6600"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="Times New Roman">
 
+
 <p align="center"><font size="6"><strong><img src="_derived/data_registration.htm_cmp_user-man010_bnr.gif" width="600" height="60" border="0" alt="Data Registration"></strong></font><br>
+
 <nobr>[&nbsp;<a href="../index.htm">Home</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="analysis_menu.htm">Up</a>&nbsp;]</nobr> <nobr>[&nbsp;Data&nbsp;Registration&nbsp;]</nobr> <nobr>[&nbsp;<a href="tip_convolution.htm">Tip&nbsp;Convolution</a>&nbsp;]</nobr></p>
+
 <p align="center">&nbsp;</p>
 
+
 <!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="Times New Roman">
+<!--
 <p><img border="0" src="../images/data_registration.gif" width="389" height="468"></p>
+-->
+<p>Once the "Data Registration" option is selected from the "Analysis" menu, the following window 
+(i.e. Data Regisration window) pops up&nbsp;</p>
+<p><img border="0" src="../images/data_registration_reg_main.png" width="1147" height="1146"></p>
+<p>along with two smaller windows. The smaller windows are for showing the topography and projection images 
+that the user wants to register to one another. If no images have been selected from the main menu beforehand, these windows 
+will look like the following:&nbsp;</p>
+<p>&nbsp;</p>
+<p><img border="0" src="../images/data_registration_reg_empty_topoproj.png" width="816" height="431"></p>
+<p>&nbsp;</p>
+<p>Once the user loads images using the "Open Static File" option under the "File" menu seen in the main menu, 
+she can assign one of the images as the topography image and another as the projection image by picking the
+related image names from the pop-up menu seen in the "Topography Image" and the "Projection Image" parts under
+the Data Registration window:&nbsp;</p>
+<p>&nbsp;</p>
+<p><img border="0" src="../images/data_registration_topoprojimage.png" width="533" height="321"></p>
+<p>&nbsp;</p>
+<p>When the images are assigned as topography and projection images, the related registration image windows will 
+show the selected images:&nbsp;</p>
+<p><img border="0" src="../images/data_registration_reg_fulltopoproj.png" width="815" height="429"></p>
+<p>&nbsp;</p>
+<p>In the above image, we are seeing an AFM image as the topography image, and a fluorescence image as the
+projection image.&nbsp;</p>
+<p>The next part after picking images is finding the fiducial markers in them. For this, we shall look at 
+the "Find Correspondence" part in the Data Registration window:&nbsp;</p>
+<p><img border="0" src="../images/data_registration_findcorrespondence1.png" width="1139" height="119"></p>
+<p>&nbsp;</p>
+<p>At this step, we want to set the threshold values on the images using the sliders, and visualize them by 
+pushing the "Calculate Points" button. Via the slider 
+"Topo. STD Thr.", we tell the program to pick pixels as markers of they have intensities that are at least X 
+standard deviations higher than the mean if the pixels that sit on an invisible local window(50x50 pixels) that surrounds 
+the pixel of interest (X is the value chosen by the user via the "Topo. STD Thr." slider. An example is given
+below (which can be seen after pushing the "Calculate Points" button and then pressing the "Draw Topography Points"
+button): &nbsp;</p>
+<p><img border="0" src="../images/data_registration_foundtopomarkers.png" width="408" height="434; float:right;"></p>
+<p>&nbsp;</p>
+<p>For setting a threshold value for the projection image, we use the "Proj. Intensity Thr." slider. 
+Different from the previous slider, this one sets an intensity value to pick the pixels that have higher values
+than it. An example is given below (which can be seen after pushing the "Calculate Points" button and then 
+pressing the "Draw Projection Points" button):&nbsp;</p>
+<p><img border="0" src="../images/data_registration_foundfluoromarkers.png" width="408" height="434"></p>
+<p>&nbsp;</p>
+<p>The method used in "Topo. STD Thr." is devised so that the markers can be correctly found in both flattened
+and unflattened AFM images. The same method could have been used for the fluorescence (projection) images;
+but since the method used for the AFM images takes much time compared to the method used for the fluorescence 
+images, and since we know that fluorescence images are always flat, we kept it this way.&nbsp;</p>
+<p>The user can alter the position of the found markers by dragging them using the left mouse button. She can also add new markers by 
+left-clicking not on any markers, or delete markers by left-clicking on the marker that she wants to delete and pressing the Backspace
+button on the keyboard. This applies to both images.&nbsp;</p>
+<p>The user can also assign tracking algorithms on the markers to have a finer fit to the actual fiducial marker
+centers. This can be done by picking the tracking algorithms of choice from the pop-up menus (next to the 
+word "Tracker") in the  "Topography Image" and the "Projection Image" parts of the window.&nbsp;</p>
+<p>When the user is satisfied with the markers in the topography image, she should press the "Save Topography 
+Points" button <b>while the topography markers are visible</b> on the topography image window. Likewise, when she wants 
+to use the markers in the projection image, she should push the the "Save Projection 
+Points" button <b>while the projection markers are visible</b> on the projection image window.&nbsp;</p>
+<p>Once the above steps are completed, we can register the images by using our saved fiducial
+markers. For this, the user should press the "Calculate Correspondences" button, and then press the 
+"Draw Correspondences" button to visualize the output (i.e. the registration markers). An example is 
+given below:&nbsp;</p>
+<p><img border="0" src="../images/data_registration_foundregistration.png" width="813" height="430"></p>
+<p>&nbsp;</p>
+<p>In the above topography image, we are seeing the same markers that were previously saved. In the algorithm, 
+the topography image markers are registered to the projection image. What this means is that, the markers we see
+on the projection image are the topography markers projected onto the projection image after going through a 
+transformation matrix. The numbers of markers are meaningful: For example, marker 17 in the projection image is 
+actually marker 17 in the topography image projected.&nbsp;</p>
+<p>These registration markers can also be saved by clicking the "Save Markers" button, or loaded by clicking
+the "Load Markers" button under the "Save/Load Registration Markers" part:&nbsp;</p>
+<p><img border="0" src="../images/data_registration_saveloadmarkers.png" width="249" height="66"></p>
+<p>&nbsp;</p>
+<p>In the "Image Overlay" part, we should click on the square button to the left of the word "Display":&nbsp;</p>
+<p><img border="0" src="../images/data_registration_imageoverlay2.png" width="367" height="82"></p>
+<p>&nbsp;</p>
+<p>Having pressed the "Display" button, we get the "3D View" window, where we can have a look at the overlaid
+image from different views:&nbsp;</p>
+<p><img border="0" src="../images/data_registration_3dregistrationview.png" width="883" height="780"></p>
+<p>&nbsp;</p>
+<p>Developers may look <nobr>&nbsp;<a href="../analysis_menu/for_developers.htm">here</a>&nbsp;</nobr>to get information on the related code.&nbsp;</p>
+<p>To have detailed information about the methods on automatic marker finding and automatic registration,
+see<nobr>&nbsp;<a href="../analysis_menu/nm_data_registration.pdf">this document</a>&nbsp;</nobr>&nbsp;</p>
+<p>&nbsp;</p>
+
 &nbsp;<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table></body>
+
 
 </html>

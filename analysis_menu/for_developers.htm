@@ -1,0 +1,151 @@
+
+<html>
+
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Data Registration</title>
+
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<meta name="Microsoft Theme" content="user-man 010, default">
+
+<meta name="Microsoft Border" content="t, default">
+
+</head>
+
+
+<body bgcolor="#FFFFCC" text="#000000" link="#006600" vlink="#993333" alink="#CC6600"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="Times New Roman">
+
+
+<p align="center"><font size="6"><strong><img src="_derived/data_registration.htm_cmp_user-man010_bnr.gif" width="600" height="60" border="0" alt="Data Registration"></strong></font><br>
+
+<nobr>[&nbsp;<a href="../index.htm">Home</a>&nbsp;]</nobr> <nobr>[&nbsp;<a href="data_registration.htm">Up</a>&nbsp;]</nobr> <nobr>[&nbsp;Data&nbsp;Registration&nbsp;]</nobr> <nobr>[&nbsp;<a href="tip_convolution.htm">Tip&nbsp;Convolution</a>&nbsp;]</nobr></p>
+
+<p align="center">&nbsp;</p>
+
+
+<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="Times New Roman">
+<!--
+<p><img border="0" src="../images/data_registration.gif" width="389" height="468"></p>
+-->
+<p>Here, you will have information on where to look at to change parts in the main registration window that pops up
+once the "Data Registration" option is selected from the "Analysis" menu.&nbsp;</p>
+<h1><u>General Information for the Main Registration Window</u></h1>
+<p>The related GUI document for all operations in the main registration window is <b>registration.tcl</b>
+under <b>src\share\tcl</b> directory.&nbsp;</p>
+<p>All callback names and functions are under <b>nmr_RegistrationUI.C</b>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h1>Putting/Deleting Markers to/from Topography & Projection Pop-Up Windows</h1>
+<p>The function related to adding/deleting/dragging markers is <b>CorrespondenceEditor::eventHandler</b>, which can be found
+under <b>correspondenceEditor.C</b> &nbsp;</p>
+<p>&nbsp;</p>
+
+<h1>Tracker under Topography Image</h1>
+<p><img border="0" src="../images/developers_topography_image_1.png" width="465" height="142"></p>
+<p><u>Name in registration.tcl</u>: reg_fiducial_spot_tracker_3D&nbsp;</p>
+<p><u>Callback name</u>: d_fiducialSpotTracker3D&nbsp;</p>
+<p><u>Callback function</u>: handle_fiducialSpotTracker3D_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h1>Tracker under Projection Image</h1>
+<p><img border="0" src="../images/developers_projection_image_1.png" width="461" height="169"></p>
+<p><u>Name in registration.tcl</u>: reg_fiducial_spot_tracker_2D&nbsp;</p>
+<p><u>Callback name</u>: d_fiducialSpotTracker2D&nbsp;</p>
+<p><u>Callback function</u>: handle_fiducialSpotTracker2D_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h1>Save/Load Registration Markers</h1>
+<h3>Save Registration Markers</h3>
+<p><img border="0" src="../images/developers_save_load_1.png" width="251" height="60"></p>
+<p><u>Name in registration.tcl</u>: save_registration_markers&nbsp;</p>
+<p><u>Callback name</u>: d_saveRegistrationMarkers&nbsp;</p>
+<p><u>Callback function</u>: handle_saveRegistrationMarkers_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Load Registration Markers</h3>
+<p><img border="0" src="../images/developers_save_load_2.png" width="230" height="58"></p>
+<p><u>Name in registration.tcl</u>: load_registration_markers&nbsp;</p>
+<p><u>Callback name</u>: d_loadRegistrationMarkers&nbsp;</p>
+<p><u>Callback function</u>: handle_loadRegistrationMarkers_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h1>Find Correspondence</h1>
+<h3>Standard Deviation Threshold for Topography Image(AFM image)</h3>
+<p><img border="0" src="../images/developers_find_correspondence_1.png" width="773" height="107"></p>
+<p><u>Name in registration.tcl</u>: set_topoIntensityThreshold&nbsp;</p>
+<p><u>Callback name</u>: d_setTopoIntensityThreshold&nbsp;</p>
+<p><u>Callback function</u>: handle_setTopoIntensityThreshold_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Intensity Threshold for Projection Image(Fluorescence Image)</h3>
+<p><img border="0" src="../images/developers_find_correspondence_2.png" width="772" height="106"></p>
+<p><u>Name in registration.tcl</u>: set_projIntensityThreshold&nbsp;</p>
+<p><u>Callback name</u>: d_setProjIntensityThreshold&nbsp;</p>
+<p><u>Callback function</u>: handle_setProjIntensityThreshold_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Calculate Points(Markers) according to the Given Thresholds</h3>
+<p><img border="0" src="../images/developers_find_correspondence_3.png" width="772" height="105"></p>
+<p><u>Name in registration.tcl</u>: run_calculatePoints&nbsp;</p>
+<p><u>Callback name</u>: d_calculatePoints&nbsp;</p>
+<p><u>Callback function</u>: handle_calculatePoints_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Draw Calculated Topography Points on Topography Pop-up Window</h3>
+<p><img border="0" src="../images/developers_find_correspondence_4.png" width="771" height="104"></p>
+<p><u>Name in registration.tcl</u>: run_drawTopographyPoints&nbsp;</p>
+<p><u>Callback name</u>: d_drawTopographyPoints&nbsp;</p>
+<p><u>Callback function</u>: handle_drawTopographyPoints_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Save Topography Points Visible on Topography Pop-up Window</h3>
+<p><img border="0" src="../images/developers_find_correspondence_5.png" width="770" height="106"></p>
+<p><u>Name in registration.tcl</u>: run_saveTopographyPoints&nbsp;</p>
+<p><u>Callback name</u>: d_saveTopographyPoints&nbsp;</p>
+<p><u>Callback function</u>: handle_saveTopographyPoints_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Draw Calculated Projection Points on Projection Pop-up Window</h3>
+<p><img border="0" src="../images/developers_find_correspondence_6.png" width="770" height="107"></p>
+<p><u>Name in registration.tcl</u>: run_drawProjectionPoints&nbsp;</p>
+<p><u>Callback name</u>: d_drawProjectionPoints&nbsp;</p>
+<p><u>Callback function</u>: handle_drawProjectionPoints_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Save Projection Points Visible on Projection Pop-up Window</h3>
+<p><img border="0" src="../images/developers_find_correspondence_7.png" width="772" height="107"></p>
+<p><u>Name in registration.tcl</u>: run_saveProjectionPoints&nbsp;</p>
+<p><u>Callback name</u>: d_saveProjectionPoints&nbsp;</p>
+<p><u>Callback function</u>: handle_saveProjectionPoints_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Calculate Registration by Finding the Best Transformation Matrix</h3>
+<p>The registration algorithm is run at this step. For detailed information on the methods,
+see<nobr>&nbsp;<a href="../analysis_menu/nm_data_registration.pdf">this document</a>&nbsp;</nobr>&nbsp;</p>
+<p><img border="0" src="../images/developers_find_correspondence_8.png" width="772" height="106"></p>
+<p><u>Name in registration.tcl</u>: run_registration&nbsp;</p>
+<p><u>Callback name</u>: d_runRegistration&nbsp;</p>
+<p><u>Callback function</u>: handle_runRegistration_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>Draw Registration Markers (Topography Points Projected Onto Projection Image)</h3>
+<p><img border="0" src="../images/developers_find_correspondence_9.png" width="772" height="106"></p>
+<p><u>Name in registration.tcl</u>: draw_registration&nbsp;</p>
+<p><u>Callback name</u>: d_runDrawRegistration&nbsp;</p>
+<p><u>Callback function</u>: handle_runDrawRegistration_change&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+&nbsp;<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table></body>
+
+
+</html>
